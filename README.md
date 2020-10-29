@@ -19,10 +19,12 @@ This program analyzes and organizes the activity data file of a rack that measur
 ## How to run this program
 
 - Download this program by going to https://github.com/rivelco/Rack-database-organizer/releases
-- You'll need to have the file `rdo.py` and the folder `RDO_files` together (in the same folder) all the time.
+- Uncompress the `.zip` file that you just download from GitHub in the folder of your choice. You must have the program and it's files inside a folder, not in the compressed file.
+- You'll need to have the file `rdo.py` and the `RDO_files` folder together (in the same folder) all the time.
 - You can specify the files you want to analyze by creating a text file called `files_rdo.txt`, this file must be in the same folder of the file `rdo.py`. Inside this file you must specify the name of the files you want to analyze. This names may be one name on each line or all the names separated by commas in the same line.
+- Note that the `files_rdo.txt` is not a folder, it's a file, like the ones that you can create with Notepad (or *Bloc de Notas*) in Windows or TextEdit (with `Plain text` mode) in macOS.
 - I recommend putting all the files to analyze inside of a specific folder, called `data`, for example.
-- If inside this `data` folder you have your files to analyze like `R2H1S3.txt`, `R1H2S4.txt` and `R3H1S2.txt`, your `files_rdo.py` will look like:
+- If inside this `data` folder you have your files to analyze like `R2H1S3.txt`, `R1H2S4.txt` and `R3H1S2.txt`, your `files_rdo.txt` will look like:
 
 ```
 data/R2H1S3.txt
@@ -48,6 +50,18 @@ rdo.py
 ### Running the program
 
 - Now just double click the `rdo.py` file.
+
+### Other input options
+
+#### Analyze all the files inside a folder
+
+- If you have many files that you want to analyze inside a folder, you can use the `folders_rdo.txt` file. Create a file called `folders_rdo.txt` just like the `files_rdo.txt` file, but this time write the names of the folders were you're storing your files to analyze. For example, if you have a folder called `Light sensors` and inside you have files `R2H1S3.txt` and `R1H2S4.txt` you just need to write inside the `folders_rdo.txt` file one line, as follows:
+
+```
+Light sensors
+```
+
+- The program will list all the files inside `Light sensors` folder, so I recommend to keep in this folder only files to analyze. This current version will throw a bunch of errors when trying to analyze other file like images or different text files.
 
 ## Output of this program
 

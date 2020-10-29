@@ -1,5 +1,3 @@
-*.txt
-*.csv
 data/
-
 RDO_files/
+*.txt

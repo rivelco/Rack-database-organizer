@@ -21,8 +21,20 @@ if __name__ == "__main__":
 
     locations = []
     print("Looking for input data...")
-    if os.path.isfile("./files_rdo.txt"):
-        with open("files_rdo.txt") as file:
+    if os.path.isfile("./folders_rdo.txt"):
+        folders = []
+        with open("folders_rdo.txt", encoding='utf-8') as file:
+            reader = csv.reader(file)
+            for row in reader:
+                for element in row:
+                    folders.append(element)
+        for folder in folders:
+            folder_files = os.listdir(folder)
+            for file in folder_files:
+                if os.path.isfile(folder + "/"+ file):
+                    locations.append(folder + "/"+ file)
+    elif os.path.isfile("./files_rdo.txt"):
+        with open("files_rdo.txt", encoding='utf-8') as file:
             reader = csv.reader(file)
             for row in reader:
                 for element in row:
@@ -32,6 +44,7 @@ if __name__ == "__main__":
     else:
         print("The program didn't receive any input data.")
         print("Nothing was changed.")
+        os.system("pause")
         exit()
 
     print("Done.")
